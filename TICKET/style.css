@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.ticket-exterior {
+    height: 100vh;
+    background: linear-gradient(160deg, #1c3f55 0%, #0d2030 60%, #0a1a28 100%);
+    border: 1px solid #d9aa3f;
+    outline: 3px solid #d9aa3f;
+    outline-offset: -6px;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .6);
+}
+
+.columna-izquierda,
+.columna-derecha {
+    float: left;
+    height: 100vh;
+    padding: 35px 40px;
+    box-sizing: border-box;
+}
+
+.columna-izquierda {
+    width: 65%;
+    overflow-y: auto;
+}
+
+.columna-izquierda::-webkit-scrollbar {
+    width: 4px;
+}
+
+.columna-izquierda::-webkit-scrollbar-thumb {
+    background: #d9aa3f;
+    border-radius: 2px;
+}
+
+.columna-derecha {
+    width: 35%;
+    text-align: center;
+    border-left: 3px dotted #d9aa3f;
+}
+
+.limpiar {
+    clear: both;
+}
+
+.logos-top {
+    color: #a0aab2;
+    font-size: 10px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logos-top .logo-ph,
+.logos-bottom .logo-ph {
+    margin: 0 12px;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+.titulo-principal {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(217, 170, 63, .25);
+    padding-bottom: 22px;
+}
+
+.texto-fiesta,
+.texto-ritmo {
+    color: #d9aa3f;
+    font-family: 'Oswald', sans-serif;
+    font-size: 76px;
+    font-weight: 700;
+    line-height: .88;
+    letter-spacing: 4px;
+}
+
+.texto-del {
+    font-size: 50px;
+    opacity: .85;
+}
+
+.subtitulo {
+    color: #a0aab2;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+.detalles-evento {
+    padding: 20px 20px 20px 18px;
+    border-left: 3px solid #d9aa3f;
+}
+
+.info-izq {
+    float: left;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.item-info {
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.item-info:last-child {
+    border-bottom: none;
+}
+
+.icono {
+    float: left;
+    color: #d9aa3f;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.texto-info {
+    float: left;
+    width: 85%;
+    line-height: 1.4;
+}
+
+.texto-info h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 3px;
+    color: #fff;
+    letter-spacing: .5px;
+}
+
+.texto-info p {
+    font-size: 9px;
+    color: #a0aab2;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logos-bottom {
+    color: #a0aab2;
+    font-size: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, .07);
+    clear: both;
+    letter-spacing: 2px;
+}
+
+.info-der {
+    float: left;
+    width: 43%;
+    border: 1px solid #d9aa3f;
+    padding: 20px;
+    background: rgba(0, 0, 0, .2);
+}
+
+.info-der h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    margin: 0 0 3px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.info-der h4 {
+    color: #d9aa3f;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    margin: 6px 0;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.info-der h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    margin: 10px 0 2px;
+    letter-spacing: 2px;
+    color: #d9aa3f;
+    font-weight: 600;
+}
+
+.info-der p.etiqueta {
+    font-size: 9px;
+    color: #a0aab2;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.info-der p.etiqueta-id {
+    font-size: 9px;
+    color: #d9aa3f;
+    margin: 10px 0 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.zona-codigos {
+    margin: 12px 0 8px;
+}
+
+.qr,
+.barras {
+    background: #fff;
+    color: #000;
+    padding: 8px;
+}
+
+.qr {
+    float: left;
+    width: 40%;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+}
+
+.barras {
+    float: right;
+    width: 55%;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.codigo-txt {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.legales {
+    font-size: 8px;
+    color: #a0aab2;
+    margin-top: 8px;
+    line-height: 1.5;
+    clear: both;
+    letter-spacing: .3px;
+}
+
+.columna-derecha h1 {
+    color: #d9aa3f;
+    font-family: 'Oswald', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: .9;
+    margin: 0 0 15px;
+    letter-spacing: 4px;
+}
+
+.columna-derecha h1 .anio {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 6px;
+}
+
+.columna-derecha h2,
+.columna-derecha h3,
+.columna-derecha h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 8px 0;
+    letter-spacing: 2px;
+    color: #a0aab2;
+    text-transform: uppercase;
+}
+
+.columna-derecha h2 {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.columna-derecha hr {
+    border: none;
+    border-top: 1px solid rgba(217, 170, 63, .5);
+    margin: 12px 0;
+}
+
+.caja-id,
+.caja-control {
+    border: 1px solid rgba(217, 170, 63, .6);
+    margin: 8px 0;
+}
+
+.caja-id {
+    color: #fff;
+    padding: 10px 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.caja-control {
+    padding: 12px;
+}
+
+.etiqueta-control {
+    color: #a0aab2;
+    font-size: 8px;
+    letter-spacing: 3px;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+}
+
+.espacio-control {
+    color: #d9aa3f;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.texto-marca {
+    background: linear-gradient(135deg, #e8b850, #b8860b);
+    color: #0a1520;
+    padding: 12px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 15px auto 0;
+    width: 85%;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(217, 170, 63, .35);
+}
+
+.mapa-ubicacion {
+    border: 1px solid rgba(217, 170, 63, .6);
+    margin: 8px 0;
+    padding: 8px;
+}
+
+.mapa-ubicacion iframe {
+    width: 100%;
+    height: 100px;
+    border: none;
+    filter: sepia(.5) saturate(.6) brightness(.9);
+}

@@ -1,0 +1,477 @@
+/* --- ESTILOS BASE Y FUENTES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- ESTILOS DEL CUERPO: Fondo general y centrado --- */
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* --- CONTENEDOR PRINCIPAL (.invoice-container): Define el contorno blanco de la factura y da el soporte Responsive --- */
+.invoice-container {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 480px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* --- SECCIÓN O BLOQUE DEL ENCABEZADO --- */
+/* Layout general (.header): Define la altura base superior y usa Grid para solapar las formas */
+.header {
+    display: grid;
+    height: 180px;
+    width: 100%;
+}
+
+/* Todos los bloques del encabezado comparten la misma celda de Grid para superponerse */
+.header-left, .header-center, .header-right {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Bloque Izquierdo Oscuro del Encabezado: Usa un recorte (clip-path) donde está el logotipo y tiene la jerarquía z más alta */
+.header-left {
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    clip-path: polygon(0 0, calc(50% - 15px) 0, calc(38% - 15px) 100%, 0 100%);
+    z-index: 3;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Tipografía Principal del Logo: Ajustes de la marca COMPAÑÍA u otro texto fuerte en blanco */
+.company-info h1 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Eslogan del Logo: Letras pequeñas y atenuadas debajo del logo */
+.company-info p {
+    color: #888888;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* Capa Naranja: Formará el borde superior derecho y la diagonal naranja */
+.header-center {
+    background-color: #E67E22;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 38% 100%);
+    z-index: 1;
+}
+
+/* Capa Derecha Oscura: Recorta su parte superior (35px) y diagonal izquierda para encajar sobre la capa Naranja */
+.header-right {
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 40px;
+    padding-top: 35px; /* Empuja el contenido hacia abajo por el borde naranja */
+    clip-path: polygon(calc(47.666% + 40px) 35px, 100% 35px, 100% 100%, calc(38% + 40px) 100%);
+    z-index: 2;
+}
+
+/* Título "FACTURA": Resaltado en grande y en color de tema naranja */
+.header-right h2 {
+    color: #E67E22;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Detalles del Recibo (Número, Fecha, etc.): Tabla virtual hecha en Grid con 2 columnas (etiqueta a la derecha y su valor) */
+.invoice-details-header {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    row-gap: 5px;
+    text-align: right;
+}
+
+/* Color y peso semi-fuerte para las etiquetas descriptivas en gris (lbl) */
+.invoice-details-header .label {
+    color: #cccccc;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Color blanco sólido y tamaño ajustado para el valor correspondiente (val) */
+.invoice-details-header .value {
+    color: #ffffff;
+    font-size: 10px;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+/* Relleno lateral (.content): Brinda un espacio general (padding) de 40px y flexibilidad para crecer dentro del documento */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+/* Sección Top (Facturar A & Método de Pago): Flexbox para distanciar ambos paneles lado a lado (.billing-info al 65% y .payment-info al 35%) */
+.top-section {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+}
+
+/* Contención izquierda: Toma del área disponible para detalles de cliente */
+.billing-info {
+    width: 65%;
+}
+
+/* Contención derecha: Toma el ancho restante sin apretarse con la cuadrícula anterior */
+.payment-info {
+    width: 35%;
+}
+
+/* Subtítulos de sección: Para forzar el color de las etiquetas de bloque ("Método de Pago", etc) */
+.section-title {
+    color: #E67E22 !important; /* Color naranja asegurado para ambos títulos */
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Personalización del nombre de la compañía facturada h3 (ej. "Jhone Doe"): Negrita, grande oscura */
+.billing-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+/* Información de la compañía facturada (Dirección/Tel): Letras grisáceas sin gran contraste */
+.billing-info p {
+    font-size: 11px;
+    color: #555555;
+    margin-bottom: 3px;
+}
+
+/* Cuadrícula de Detalles de Pago: Construye 2 columnas obligadas donde la primera restringe a 120px el enunciado. */
+.payment-details {
+    display: grid;
+    grid-template-columns: 120px auto;
+    column-gap: 15px;
+    row-gap: 5px;
+    justify-content: start;
+}
+
+/* Label descriptivo ("Nombre cuenta:", etc) dentro del cuadrante de pago */
+.payment-details .label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #111111;
+}
+
+/* Valor arrojado (El número de cuenta) dentro del cuadrante de pago */
+.payment-details .value {
+    font-size: 11px;
+    color: #555555;
+}
+
+/* --- TABLA DE ARTÍCULOS --- */
+/* Formato global Tabla (invoice-table): 100% de la envergadura del documento, colapsando bordes para mantener las filas unidas */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Cabeceras de tabla (th): Banda superior de color naranja, centrado por defecto en mayúsculas negritas */
+.invoice-table th {
+    background-color: #E67E22;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Fuerza el texto izquierdo para la segunda columna exclusiva (Descripción del artículo) para que se lea natural (alineación de texto típica) */
+.invoice-table th:nth-child(2) {
+    text-align: left;
+}
+
+/* Diseño de Celdas Normales (td): Fuente pequeña centrada para todas las celdas contables (precios, fechas, cantidades) */
+.invoice-table td {
+    font-size: 11px;
+    color: #333333;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Celdas con Descripción del servicio exclusivas: Ajustadas junto con su cabecera hacia la izquierda y en tonalidad negrita para diferenciar */
+.invoice-table td:nth-child(2) {
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Filas Zebra: Aplica automáticamente un fondo gris claro (#f9f9f9) a todas las filas con índice número-par (2, 4, 6) mejorando su lectura (Zebra Striping) */
+.invoice-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* --- SECCIÓN DE TOTALES --- */
+/* Grid de contenedor (.totals-section): Estilo block que se adapta en ancho total para posicionar internamente la grilla numérica bajo la tabla */
+.totals-section {
+    display: block;
+    margin-bottom: 20px;
+    padding-left: 30px; /* Alineado bajo la fecha de la tabla ("8 de ene") */
+    padding-right: 40px;
+}
+
+/* Grilla numérica (Display Grid): Reparte el espacio donde la Descripción empuja a la izquierda pero cede la segunda columna al valor calculado */
+.totals-grid {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Etiqueta a la izquierda, valor a la derecha */
+    row-gap: 8px;
+}
+
+/* El listado de "Subtotal", "Impuestos", alineados a la izquierda tal como están definidos */
+.totals-grid .label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #111111;
+    text-align: left;
+}
+
+/* El listado de números "$300.00" situados a la derecha, para tener un cálculo tabulado en eje vertical exacto */
+.totals-grid .value {
+    font-size: 11px;
+    color: #333333;
+    text-align: right;
+    min-width: 100px;
+}
+
+/* --- CÁLCULO GENERAL DE LA FACTURA --- */
+/* Banda del Total Principal (Barra Total Naranja): Justificada en Space-between (Total al extremo izquierdo, Monto al extremo derecho), fondo anaranjado */
+.grand-total-bar {
+    background-color: #E67E22;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Texto de Etiqueta "TOTAL:" de la barra mayor */
+.grand-total-bar .label {
+    font-size: 14px;
+}
+
+/* Texto del Sumario "3400.00" de la barra mayor (Tipografía Ligeramente Más Grande p/ Resaltado) */
+.grand-total-bar .value {
+    font-size: 16px;
+}
+
+/* --- INFORMACIÓN DE PIÉ DE FACTURA --- */
+/* (.footer-info): Contenedor de Flexbox para agrupar en columnas adyacentes los "términos de pago" con "la firma gerente" colocándolos sobre la base (flex-end)  */
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Área de los Términos (.terms-conditions): Toma un 60% lateral izquierdo que agrupa los textos aburridos (lorem ipsum) */
+.terms-conditions {
+    width: 60%;
+}
+
+/* Tipografía en negrita del Título inferior ("Términos y condiciones") */
+.terms-conditions h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+/* Párrafo legal largo: Letras de tamaño minúscula de baja opacidad color "Gris/Negro suavizado" (#555555) */
+.terms-conditions p {
+    font-size: 10px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Área de Firma Comercial (.signature): Bloque contendor (Flex box vertical centrada al eje de su firma) tomando 30% del espacio flotando en lado derecho de los textos. */
+.signature {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagen de la firma - Restricciones previendo cualquier dimensión del PNG o SVG (object-fit: contain frena deformaciones y max-width la topa). */
+.signature-img {
+    height: 40px;
+    max-width: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Línea de estampado (.line): Una raya fina en gris que funciona de base del sello visual */
+.signature .line {
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    margin-bottom: 10px;
+}
+
+/* Persona Gerente de cuenta (.name): Título remarcado del individuo dueño del documento bajo la línea central */
+.signature .name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 3px;
+}
+
+/* Cargo o Profesión (.title): Categoría descriptiva inferior, sin negritas "Account Manager..." */
+.signature .title {
+    font-size: 9px;
+    color: #888888;
+}
+
+/* --- DISEÑO PIE DE PÁGINA --- */
+/* Marco principal bajo fondo de hoja (.bottom-footer) (Oculta contenido excesivo si los recortes pasaran el div de altura 40px) */
+.bottom-footer {
+    display: flex;
+    height: 40px;
+    overflow: hidden;
+}
+
+/* Recorte Diagonal del Pie anaranjado: Ocupa los primeros 25% y corta a 84% de grado asimétrico para embonar en su compañero negro */
+.footer-orange {
+    background-color: #E67E22;
+    width: 25%;
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+}
+
+/* Recorte Diagonal del Pie Negro: Ocupa el margen general, con clip-path recortado a 7.5% en la entrada en Y-Cero, asimilando así el paralalejismo inclinado que crea la silueta visual. */
+.footer-black {
+    background-color: #111111;
+    width: 80%;
+    margin-left: -5%;
+    clip-path: polygon(7.5% 0, 100% 0, 100% 100%, 2.5% 100%);
+}
+
+/* ========================================= */
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+/* ========================================= */
+/* Breakpoint general para tabletas (<900px): Transiciona todos los recortes (clip-path = none) e inactiva flexbox en favor a una columna simple por pantalla.*/
+@media screen and (max-width: 900px) {
+    .header {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-left, .header-center, .header-right {
+        width: 100%;
+        clip-path: none;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .header-left {
+        justify-content: center;
+    }
+    
+    .header-center {
+        display: none; /* Ocultar franja en móviles */
+    }
+
+    .header-right {
+        align-items: center;
+        text-align: center;
+        background-color: #111111;
+    }
+    
+    .invoice-details-header {
+        text-align: center;
+    }
+
+    .top-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .invoice-table th, .invoice-table td {
+        padding: 10px 5px;
+        font-size: 10px;
+    }
+
+    .bottom-footer {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .footer-orange, .footer-black {
+        width: 100%;
+        clip-path: none;
+        margin: 0;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .invoice-table th, .invoice-table td {
+        padding: 8px;
+        font-size: 9px;
+    }
+
+    .totals-section {
+        justify-content: center;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .totals-grid {
+        justify-content: center;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .terms-conditions {
+        width: 100%;
+    }
+
+    .signature {
+        width: 80%;
+    }
+}

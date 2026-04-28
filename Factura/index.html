@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <!-- CONTENEDOR PRINCIPAL: Envuelve toda la factura -->
+    <div class="invoice-container">
+        
+        <!-- ENCABEZADO SUPERIOR: Logo, información de empresa y detalles de factura -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#E67E22"/>
+                            <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="company-info">
+                        <h1>COMPAÑÍA</h1>
+                        <p>ESLOGAN DE LA COMPAÑÍA AQUÍ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-center"></div>
+            <div class="header-right">
+                <h2>FACTURA</h2>
+                <div class="invoice-details-header">
+                    <div class="label">Número de Factura:</div>
+                    <div class="value">#123456</div>
+                    <div class="label">Número de Cuenta:</div>
+                    <div class="value">1234 5678 9101</div>
+                    <div class="label">Fecha de Factura:</div>
+                    <div class="value">05 de abril de 2020</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL: Información de cobro, tabla de artículos, y suma de totales -->
+        <main class="content">
+            
+            <!-- SECCIÓN DE INFORMACIÓN DE FACTURACIÓN Y PAGO -->
+            <div class="top-section">
+                <div class="billing-info">
+                    <p class="section-title">FACTURAR A:</p>
+                    <h3>Jhone Doe.</h3>
+                    <p>Director General, Compañía Ltda.</p>
+                    <p>Teléfono: +123 4567 8910</p>
+                    <p>Correo electrónico: example@mail.com</p>
+                </div>
+                <div class="payment-info">
+                    <p class="section-title">Método de Pago</p>
+                    <div class="payment-details">
+                        <div class="label">Número de Cuenta:</div>
+                        <div class="value">1234 5678 910</div>
+                        <div class="label">Nombre de Cuenta:</div>
+                        <div class="value">Jhone Doe.</div>
+                        <div class="label">Nombre de Sucursal:</div>
+                        <div class="value">XYZ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLA DE ARTÍCULOS: Lista de productos o servicios facturados -->
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>FECHA</th>
+                        <th>DESCRIPCIÓN DEL ARTÍCULO</th>
+                        <th>PRECIO</th>
+                        <th>CANT.</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10 de ene, 2020</td>
+                        <td>Diseño de tarjeta de visita</td>
+                        <td>$300</td>
+                        <td>2</td>
+                        <td>$600.00</td>
+                    </tr>
+                    <tr>
+                        <td>10 de ene, 2020</td>
+                        <td>Diseño de folleto de frutas</td>
+                        <td>$455</td>
+                        <td>1</td>
+                        <td>$450.00</td>
+                    </tr>
+                    <tr>
+                        <td>10 de ene, 2020</td>
+                        <td>Diseño de interfaz de aplicación</td>
+                        <td>$300</td>
+                        <td>1</td>
+                        <td>$300.00</td>
+                    </tr>
+                    <tr>
+                        <td>9 de ene, 2020</td>
+                        <td>Desarrollo de tema</td>
+                        <td>$150</td>
+                        <td>3</td>
+                        <td>$450.00</td>
+                    </tr>
+                    <tr>
+                        <td>9 de ene, 2020</td>
+                        <td>Diseño de marca completo</td>
+                        <td>$150</td>
+                        <td>1</td>
+                        <td>$150.00</td>
+                    </tr>
+                    <tr>
+                        <td>8 de ene, 2020</td>
+                        <td>Diseño de logo creativo</td>
+                        <td>$200</td>
+                        <td>1</td>
+                        <td>$200.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- SECCIÓN DE CÁLCULOS SUBTOTALES: Subtotal, descuentos e impuestos -->
+            <div class="totals-section">
+                <div class="totals-grid">
+                    <div class="label">Subtotal:</div>
+                    <div class="value">$3150.00</div>
+                    <div class="label">Descuento:</div>
+                    <div class="value">00.00</div>
+                    <div class="label">Impuestos (10%):</div>
+                    <div class="value">$315.00</div>
+                </div>
+            </div>
+
+            <!-- BARRA DE GRAN TOTAL: Cantidad de pago final -->
+            <div class="grand-total-bar">
+                <div class="label">Total:</div>
+                <div class="value">$3465.00</div>
+            </div>
+
+            <!-- PIE DE FACTURA (Contenido): Términos y firma -->
+            <div class="footer-info">
+                <div class="terms-conditions">
+                    <h4>Términos y Condiciones:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                </div>
+                <div class="signature">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Signature_of_John_Hancock.png" alt="Firma" class="signature-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><path d=\'M10,40 Q30,20 50,30 T90,20 T140,30 T180,10\' stroke=\'black\' fill=\'transparent\' stroke-width=\'2\'/></svg>'">
+                    <div class="line"></div>
+                    <p class="name">Su Nombre y Firma</p>
+                    <p class="title">Gerente de Cuentas</p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- PIE DE DISEÑO INFERIOR DE LA PÁGINA (Estilos): Franjas naranja y negro -->
+        <footer class="bottom-footer">
+            <div class="footer-orange"></div>
+            <div class="footer-black"></div>
+        </footer>
+    </div>
+</body>
+</html>

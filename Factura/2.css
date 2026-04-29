@@ -9,8 +9,8 @@
 /* --- ESTILOS DEL CUERPO: Fondo general y centrado --- */
 body {
     background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     padding: 40px 0;
 }
 

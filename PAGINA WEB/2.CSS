@@ -218,6 +218,10 @@ body {
     font-size: 0.9rem;
 }
 
+.pie-pagina p::after {
+    content: " DEBAJO DEL PROYECTO 4";
+}
+
 @media (max-width: 1024px) {
     .tarjeta {
         width: 48%;

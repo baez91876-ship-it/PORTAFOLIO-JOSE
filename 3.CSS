@@ -1,12 +1,19 @@
 :root {
-    --primary: #0969da;
-    --secondary: #2da44e;
-    --accent: #bf8700;
-    --dark: #24292f;
-    --light: #f6f8fa;
+    --primary: #4f46e5;
+    --primary-transparent: rgba(79, 70, 229, 0.9);
+    --secondary: #10b981;
+    --accent: #f43f5e;
+    --dark: #0f172a;
+    --light: #f8fafc;
     --white: #ffffff;
-    --gray: #57606a;
-    --border: #d0d7de;
+    --gray: #64748b;
+    --border: #e2e8f0;
+
+    --bg-p1: #e0e7ff;
+    --bg-p2: #d1fae5;
+    --bg-p3: #fef08a;
+    --bg-p4: #ffe4e6;
+    --bg-p5: #f3e8ff;
 }
 
 * {
@@ -16,7 +23,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     color: var(--dark);
     background-color: var(--white);
@@ -41,11 +48,12 @@ body {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 8px;
+    color: var(--light);
 }
 
 .header .subtitulo {
     font-size: 1.1rem;
-    color: #8c959f;
+    color: var(--gray);
 }
 
 .hero {
@@ -81,15 +89,14 @@ body {
     color: var(--dark);
 }
 
+/* Sistema Grid moderno: Sin errores de posicionamiento */
 .galeria {
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .proyecto-card {
-    float: left;
-    width: calc((100% - 60px) / 3);
-    margin-right: 30px;
-    margin-bottom: 30px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -97,37 +104,36 @@ body {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     color: inherit;
-}
-
-.proyecto-card:nth-child(3n) {
-    margin-right: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .proyecto-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 3px 6px rgba(140, 149, 159, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Contenedor relativo para que el recuadro azul (overlay) no se escape */
 .proyecto-imagen {
+    position: relative;
     height: 180px;
     overflow: hidden;
     text-align: center;
     line-height: 180px;
     border-bottom: 1px solid var(--border);
-    transition: transform 0.3s ease;
 }
 
-.proyecto-1 { background: #ddf4ff; }
-.proyecto-2 { background: #dafbe1; }
-.proyecto-3 { background: #fff8c5; }
-.proyecto-4 { background: #ffebe9; }
-.proyecto-5 { background: #fbefff; }
+.proyecto-1 { background: var(--bg-p1); }
+.proyecto-2 { background: var(--bg-p2); }
+.proyecto-3 { background: var(--bg-p3); }
+.proyecto-4 { background: var(--bg-p4); }
+.proyecto-5 { background: var(--bg-p5); }
 
 .numero-proyecto {
     font-size: 4rem;
     font-weight: 600;
-    color: var(--gray);
-    opacity: 0.5;
+    color: var(--dark);
+    opacity: 0.2;
     transition: transform 0.3s ease;
 }
 
@@ -135,11 +141,14 @@ body {
     transform: scale(1.05);
 }
 
+/* Efecto azul perfecto sobre la imagen */
 .overlay {
-    margin-top: -180px;
-    height: 180px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    background: rgba(9, 105, 218, 0.9);
+    background: var(--primary-transparent);
     text-align: center;
     line-height: 180px;
     opacity: 0;
@@ -151,13 +160,14 @@ body {
 }
 
 .ver-mas {
-    color: var(--white);
+    color: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
 }
 
 .proyecto-info {
     padding: 16px;
+    flex-grow: 1;
 }
 
 .proyecto-info h3 {
@@ -174,13 +184,14 @@ body {
 }
 
 .etiqueta {
-    background: #ddf4ff;
+    background: var(--light);
     color: var(--primary);
     padding: 4px 10px;
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
     border-radius: 2em;
     font-size: 0.75rem;
     font-weight: 500;
+    display: inline-block;
 }
 
 .footer {
@@ -196,32 +207,21 @@ body {
     font-size: 0.85rem;
 }
 
+/* Adaptación para pantallas pequeñas (Celulares y Tablets) */
 @media (max-width: 768px) {
     .header .titulo {
         font-size: 1.5rem;
     }
-
     .hero h2 {
         font-size: 1.25rem;
     }
-
-    .proyecto-card {
-        float: none;
-        width: 100%;
-        margin-right: 0;
+    .galeria {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .proyecto-card {
-        width: calc((100% - 30px) / 2);
-    }
-
-    .proyecto-card:nth-child(3n) {
-        margin-right: 30px;
-    }
-
-    .proyecto-card:nth-child(2n) {
-        margin-right: 0;
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

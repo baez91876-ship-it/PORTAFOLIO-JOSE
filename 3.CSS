@@ -1,11 +1,12 @@
 :root {
-    --primary: #4F46E5;
-    --secondary: #10B981;
-    --accent: #F59E0B;
-    --dark: #1F2937;
-    --light: #F9FAFB;
+    --primary: #0969da;
+    --secondary: #2da44e;
+    --accent: #bf8700;
+    --dark: #24292f;
+    --light: #f6f8fa;
     --white: #ffffff;
-    --gray: #6B7280;
+    --gray: #57606a;
+    --border: #d0d7de;
 }
 
 * {
@@ -15,10 +16,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.5;
     color: var(--dark);
-    background-color: var(--light);
+    background-color: var(--white);
 }
 
 .container {
@@ -29,50 +30,54 @@ body {
 }
 
 .header {
-    background: linear-gradient(135deg, var(--primary), #7C3AED);
+    background: var(--dark);
     color: var(--white);
-    padding: 40px 0;
+    padding: 30px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border);
 }
 
 .header .titulo {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .header .subtitulo {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    color: #8c959f;
 }
 
 .hero {
-    background: var(--white);
-    padding: 50px 0;
+    background: var(--light);
+    padding: 40px 0;
     text-align: center;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--border);
 }
 
 .hero h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    font-weight: 600;
     color: var(--dark);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--gray);
     margin-bottom: 10px;
 }
 
 .main {
     padding: 60px 0;
+    background-color: var(--white);
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: var(--dark);
 }
 
@@ -86,10 +91,10 @@ body {
     margin-right: 30px;
     margin-bottom: 30px;
     background: var(--white);
-    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     color: inherit;
 }
@@ -99,62 +104,46 @@ body {
 }
 
 .proyecto-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+    box-shadow: 0 3px 6px rgba(140, 149, 159, 0.15);
 }
 
 .proyecto-imagen {
-    height: 200px;
+    height: 180px;
     overflow: hidden;
     text-align: center;
-    line-height: 200px;
+    line-height: 180px;
+    border-bottom: 1px solid var(--border);
     transition: transform 0.3s ease;
 }
 
-.proyecto-1 {
-    background: linear-gradient(135deg, #4F46E5, #7C3AED);
-}
-
-.proyecto-2 {
-    background: linear-gradient(135deg, #10B981, #059669);
-}
-
-.proyecto-3 {
-    background: linear-gradient(135deg, #F59E0B, #D97706);
-}
-
-.proyecto-4 {
-    background: linear-gradient(135deg, #EC4899, #DB2777);
-}
-
-.proyecto-5 {
-    background: linear-gradient(135deg, #8B5CF6, #6D28D9);
-}
+.proyecto-1 { background: #ddf4ff; }
+.proyecto-2 { background: #dafbe1; }
+.proyecto-3 { background: #fff8c5; }
+.proyecto-4 { background: #ffebe9; }
+.proyecto-5 { background: #fbefff; }
 
 .numero-proyecto {
-    font-size: 5rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--gray);
+    opacity: 0.5;
     transition: transform 0.3s ease;
 }
 
 .proyecto-card:hover .numero-proyecto {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.proyecto-card:hover .proyecto-imagen {
     transform: scale(1.05);
 }
 
 .overlay {
-    margin-top: -200px;
-    height: 200px;
+    margin-top: -180px;
+    height: 180px;
     width: 100%;
-    background: rgba(79, 70, 229, 0.8);
+    background: rgba(9, 105, 218, 0.9);
     text-align: center;
-    line-height: 200px;
+    line-height: 180px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .proyecto-card:hover .overlay {
@@ -163,53 +152,57 @@ body {
 
 .ver-mas {
     color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .proyecto-info {
-    padding: 20px;
+    padding: 16px;
 }
 
 .proyecto-info h3 {
-    font-size: 1.3rem;
-    color: var(--dark);
-    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
 }
 
 .proyecto-info p {
     color: var(--gray);
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
 }
 
 .etiqueta {
-    background: var(--primary);
-    color: var(--white);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    background: #ddf4ff;
+    color: var(--primary);
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    border-radius: 2em;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .footer {
-    background: var(--dark);
-    color: var(--white);
+    background: var(--light);
+    color: var(--gray);
     text-align: center;
-    padding: 30px 0;
-    margin-top: 60px;
+    padding: 40px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
 }
 
 .footer p {
-    opacity: 0.8;
+    font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
     .header .titulo {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .hero h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .proyecto-card {

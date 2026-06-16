@@ -88,6 +88,20 @@ body {
     justify-content: center;
 }
 
+.numero-proyecto {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--dark);
+    color: var(--white);
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .proyecto-1 { background: url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&q=80') center/cover no-repeat; }
 .proyecto-2 { background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80') center/cover no-repeat; }
 .proyecto-3 { background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80') center/cover no-repeat; }
@@ -107,6 +121,7 @@ body {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 5;
 }
 
 .proyecto-card:hover .overlay {

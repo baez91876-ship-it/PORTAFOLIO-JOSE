@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos Comerciales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Definición de Iconos SVG para reutilizar y limpiar código -->
+    <svg style="display: none;">
+        <symbol id="icon-dash" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="2"/>
+        </symbol>
+        <symbol id="icon-gear" viewBox="0 0 24 24">
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/><circle cx="12" cy="12" r="3"/>
+        </symbol>
+    </svg>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span>Teléfono: +1 800 123 4567</span>
+            <span>Dirección: 4500 Av. Comercial, NY</span>
+            <span>Horario: Lun - Sáb: 8:00am - 6:00pm</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <span>|</span>
+            <a href="#">Iniciar Sesión / Registro</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="commercial">vehículos</span>
+            <span class="vehicles">comerciales</span>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Inventario</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Páginas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="btn-add">Publicar Anuncio</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">15 000+</h1>
+        <p class="hero-subtitle">Vehículos Disponibles</p>
+    </section>
+
+    <!-- Search Area superpuesta -->
+    <div class="search-wrapper">
+        <div class="search-area">
+            <div class="search-tabs">
+                <div class="tab active">Cualquier estado</div>
+                <div class="tab">Autos Nuevos</div>
+                <div class="tab">Autos Usados</div>
+            </div>
+            <div class="search-form">
+                <select><option>Cualquier Marca</option><option>Ford</option><option>Mercedes</option></select>
+                <select><option>Cualquier Modelo</option><option>Mustang</option><option>Sprinter</option></select>
+                <select><option>Precio Máximo</option><option>$10,000</option><option>$50,000</option></select>
+                <button>50 AUTOS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vehicle Grid -->
+    <section class="vehicles-section">
+        <div class="section-header">
+            <h2 class="section-title">Autos Nuevos y Usados</h2>
+            <div class="section-filters">
+                <span class="active">Más Populares</span>
+                <span>Destacados</span>
+            </div>
+        </div>
+        
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Mercedes Sprinter">
+                    <div class="price-tag">$45,000</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Mercedes-Benz Sprinter</h3>
+                    <p class="card-year">2023</p>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <svg><use href="#icon-dash"></use></svg>
+                            12,000 km
+                        </div>
+                        <div class="meta-item">
+                            <svg><use href="#icon-gear"></use></svg>
+                            Automático
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Camioneta Ford">
+                    <div class="price-tag">$28,900</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Ford F-150 Raptor</h3>
+                    <p class="card-year">2021</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 45,000 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Automático</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80" alt="Volvo">
+                    <div class="price-tag">$19,500</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Volvo VNL 860</h3>
+                    <p class="card-year">2019</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 120,000 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Manual</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://autosdeprimera.com/wp-content/uploads/2025/06/ram-1500-v8-hemi-2026-frente.jpg" alt="Dodge Ram">
+                    <div class="price-tag">$31,200</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Dodge Ram 1500</h3>
+                    <p class="card-year">2022</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 22,000 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Automático</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAq1bSDTu8XOESW3j1KB583NFKab4nwW27JA&s" alt="Ford Transit">
+                    <div class="price-tag">$38,500</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Ford Transit Cargo Van</h3>
+                    <p class="card-year">2022</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 31,000 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Automático</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT83hvnws6MmRftlur2HoyEQ0nhZN7enLOEHA&s" alt="Camión Isuzu">
+                    <div class="price-tag">$42,000</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Isuzu N-Series</h3>
+                    <p class="card-year">2020</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 89,000 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Automático</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ92Gj5hrREkNqIYnnezlSlz7JsyqFNxjfLg&s" alt="GMC Sierra">
+                    <div class="price-tag">$55,800</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">GMC Sierra 2500HD</h3>
+                    <p class="card-year">2023</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 9,500 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Automático</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL4g9tYQG8f7otX7CFDxCzSVsLOuegKKNcnQ&s" alt="Kenworth">
+                    <div class="price-tag">$75,000</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Kenworth T680</h3>
+                    <p class="card-year">2018</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><svg><use href="#icon-dash"></use></svg> 250,000 km</div>
+                        <div class="meta-item"><svg><use href="#icon-gear"></use></svg> Manual</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-item">
+            <div class="stat-number">15,000+</div>
+            <div class="stat-label">Autos en venta</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">8,500</div>
+            <div class="stat-label">Visitantes diarios</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">450</div>
+            <div class="stat-label">Reseñas recibidas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2,000</div>
+            <div class="stat-label">Asesores verificados</div>
+        </div>
+    </section>
+
+    <!-- News & Reviews Section -->
+    <section class="news-section">
+        <div class="news-header">
+            <h2>Noticias y Reseñas</h2>
+        </div>
+        <div class="grid-3">
+            <article class="news-card">
+                <div class="news-img">
+                    <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=600&q=80" alt="Noticia 1">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">Los Mejores Vehículos Comerciales para PyMEs en 2024</h3>
+                    <div class="news-meta">
+                        <span>12 de Octubre, 2023</span>
+                        <span>12 Comentarios</span>
+                    </div>
+                </div>
+            </article>
+            <article class="news-card">
+                <div class="news-img">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80" alt="Noticia 2">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">Cómo Mantener la Eficiencia de tu Flota Comercial</h3>
+                    <div class="news-meta">
+                        <span>05 de Noviembre, 2023</span>
+                        <span>8 Comentarios</span>
+                    </div>
+                </div>
+            </article>
+            <article class="news-card">
+                <div class="news-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9mRAlhedGT1f3yZXfFCO6UA20XRwJAc2bIg&s" alt="Noticia 3">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">Vehículos Comerciales Eléctricos: ¿Valen la Pena?</h3>
+                    <div class="news-meta">
+                        <span>18 de Diciembre, 2023</span>
+                        <span>24 Comentarios</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Vehículos Comerciales. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
